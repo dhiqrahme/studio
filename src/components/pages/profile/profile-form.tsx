@@ -22,6 +22,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import type { User, Interest } from "@/lib/types";
 import UserAvatar from "@/components/user-avatar";
 import { useToast } from "@/hooks/use-toast";
+import { interests as allInterests } from "@/lib/data";
 
 const profileFormSchema = z.object({
   name: z.string().min(2, {
@@ -43,10 +44,10 @@ type ProfileFormValues = z.infer<typeof profileFormSchema>;
 
 type ProfileFormProps = {
   user: User;
-  interests: Interest[];
+  interests: Omit<Interest, "icon">[];
 };
 
-export default function ProfileForm({ user, interests }: ProfileFormProps) {
+export default function ProfileForm({ user }: ProfileFormProps) {
   const { toast } = useToast();
   
   const form = useForm<ProfileFormValues>({
@@ -154,7 +155,7 @@ export default function ProfileForm({ user, interests }: ProfileFormProps) {
               render={() => (
                 <FormItem>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                    {interests.map((interest) => (
+                    {allInterests.map((interest) => (
                       <FormField
                         key={interest.id}
                         control={form.control}

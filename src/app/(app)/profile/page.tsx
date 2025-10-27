@@ -6,6 +6,8 @@ export const metadata = {
 };
 
 export default function ProfilePage() {
+  const interestsForClient = interests.map(({ icon, ...rest }) => rest);
+
   return (
     <div className="container mx-auto max-w-3xl">
       <div className="space-y-6">
