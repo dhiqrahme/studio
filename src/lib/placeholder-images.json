@@ -1,3 +1,76 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "user-1",
+      "description": "A smiling young woman with curly hair.",
+      "imageUrl": "https://images.unsplash.com/photo-1614436201459-156d322d38c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxzbWlsaW5nJTIwd29tYW58ZW58MHx8fHwxNzYxNTU4OTY2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "smiling woman"
+    },
+    {
+      "id": "user-2",
+      "description": "A young man with glasses reading a book.",
+      "imageUrl": "https://images.unsplash.com/photo-1473492201326-7c01dd2e596b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtYW4lMjByZWFkaW5nfGVufDB8fHx8MTc2MTU4NDQwN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man reading"
+    },
+    {
+      "id": "user-3",
+      "description": "A person hiking on a mountain trail.",
+      "imageUrl": "https://images.unsplash.com/photo-1572591414609-0d4ffb2f3aea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwZXJzb24lMjBoaWtpbmd8ZW58MHx8fHwxNzYxNTk0NTI2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person hiking"
+    },
+    {
+      "id": "user-4",
+      "description": "A woman painting on a canvas.",
+      "imageUrl": "https://images.unsplash.com/photo-1593677588814-08ba8620d58a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8d29tYW4lMjBwYWludGluZ3xlbnwwfHx8fDE3NjE2MDg0ODJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman painting"
+    },
+    {
+      "id": "user-5",
+      "description": "A man playing a guitar.",
+      "imageUrl": "https://images.unsplash.com/photo-1671776616894-27b0ae001fcc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxtYW4lMjBndWl0YXJ8ZW58MHx8fHwxNzYxNTY4NzY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man guitar"
+    },
+    {
+      "id": "user-6",
+      "description": "A person doing yoga in a park.",
+      "imageUrl": "https://images.unsplash.com/photo-1611094601537-cdbb75b979cc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwZXJzb24lMjB5b2dhfGVufDB8fHx8MTc2MTU2ODc2NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person yoga"
+    },
+    {
+      "id": "user-7",
+      "description": "A smiling man with a beard.",
+      "imageUrl": "https://images.unsplash.com/photo-1656339781704-0afb3becfd90?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8YmVhcmRlZCUyMG1hbnxlbnwwfHx8fDE3NjE1ODYyNjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "bearded man"
+    },
+    {
+      "id": "user-8",
+      "description": "A woman taking a photo with a vintage camera.",
+      "imageUrl": "https://images.unsplash.com/photo-1553028826-1e7ae9200212?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx3b21hbiUyMGNhbWVyYXxlbnwwfHx8fDE3NjE1NDI2MzR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman camera"
+    },
+    {
+      "id": "user-9",
+      "description": "A person coding on a laptop.",
+      "imageUrl": "https://images.unsplash.com/photo-1605711285791-0219e80e43a3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwZXJzb24lMjBjb2Rpbmd8ZW58MHx8fHwxNzYxNTg1NjQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person coding"
+    },
+    {
+      "id": "user-10",
+      "description": "A chef cooking in a kitchen.",
+      "imageUrl": "https://images.unsplash.com/photo-1622021142947-da7dedc7c39a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjaGVmJTIwY29va2luZ3xlbnwwfHx8fDE3NjE1MTUxOTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "chef cooking"
+    },
+    {
+      "id": "user-11",
+      "description": "A person DJing at a party.",
+      "imageUrl": "https://images.unsplash.com/photo-1695277579090-541829585350?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwZXJzb24lMjBkamluZ3xlbnwwfHx8fDE3NjE2MDg0ODJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person djing"
+    },
+    {
+      "id": "user-12",
+      "description": "A woman jogging in the city.",
+      "imageUrl": "https://images.unsplash.com/photo-1745439714800-16a890027c35?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx3b21hbiUyMGpvZ2dpbmd8ZW58MHx8fHwxNzYxNTc0MTc0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman jogging"
+    }
+  ]
 }
