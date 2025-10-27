@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useActionState } from "react";
@@ -69,120 +70,122 @@ export default function SyncCirclesForm({ friends }: { friends: User[] }) {
   return (
     <div className="space-y-6">
       <Card>
-        <form
-          action={formAction}
-          onSubmit={form.handleSubmit((data) => {
-            const formData = new FormData();
-            data.friends.forEach((friend) => formData.append("friends", friend));
-            formData.append("timeConstraints", data.timeConstraints);
-            formData.append("locationConstraints", data.locationConstraints);
-            formData.append("activityPreferences", data.activityPreferences);
-            formAction(formData);
-          })}
-        >
-          <CardHeader>
-            <CardTitle>Plan Your Meetup</CardTitle>
-            <CardDescription>
-              Fill in the details and let AI handle the coordination.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <FormField
-              control={form.control}
-              name="friends"
-              render={() => (
-                <FormItem>
-                  <FormLabel>Friends</FormLabel>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    {friends.slice(0, 8).map((friend) => (
-                      <FormField
-                        key={friend.id}
-                        control={form.control}
-                        name="friends"
-                        render={({ field }) => (
-                          <FormItem className="flex flex-row items-center space-x-3 space-y-0 rounded-md border p-4">
-                            <FormControl>
-                              <Checkbox
-                                checked={field.value?.includes(friend.name)}
-                                onCheckedChange={(checked) => {
-                                  return checked
-                                    ? field.onChange([...field.value, friend.name])
-                                    : field.onChange(
-                                        field.value?.filter(
-                                          (value) => value !== friend.name
-                                        )
-                                      );
-                                }}
-                              />
-                            </FormControl>
-                            <FormLabel className="font-normal">
-                              {friend.name}
-                            </FormLabel>
-                          </FormItem>
-                        )}
+        <Form {...form}>
+          <form
+            action={formAction}
+            onSubmit={form.handleSubmit((data) => {
+              const formData = new FormData();
+              data.friends.forEach((friend) => formData.append("friends", friend));
+              formData.append("timeConstraints", data.timeConstraints);
+              formData.append("locationConstraints", data.locationConstraints);
+              formData.append("activityPreferences", data.activityPreferences);
+              formAction(formData);
+            })}
+          >
+            <CardHeader>
+              <CardTitle>Plan Your Meetup</CardTitle>
+              <CardDescription>
+                Fill in the details and let AI handle the coordination.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <FormField
+                control={form.control}
+                name="friends"
+                render={() => (
+                  <FormItem>
+                    <FormLabel>Friends</FormLabel>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                      {friends.slice(0, 8).map((friend) => (
+                        <FormField
+                          key={friend.id}
+                          control={form.control}
+                          name="friends"
+                          render={({ field }) => (
+                            <FormItem className="flex flex-row items-center space-x-3 space-y-0 rounded-md border p-4">
+                              <FormControl>
+                                <Checkbox
+                                  checked={field.value?.includes(friend.name)}
+                                  onCheckedChange={(checked) => {
+                                    return checked
+                                      ? field.onChange([...field.value, friend.name])
+                                      : field.onChange(
+                                          field.value?.filter(
+                                            (value) => value !== friend.name
+                                          )
+                                        );
+                                  }}
+                                />
+                              </FormControl>
+                              <FormLabel className="font-normal">
+                                {friend.name}
+                              </FormLabel>
+                            </FormItem>
+                          )}
+                        />
+                      ))}
+                    </div>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="timeConstraints"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Time Constraints</FormLabel>
+                    <FormControl>
+                      <Input placeholder="e.g., 'Any weekday evening', 'This weekend'" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="locationConstraints"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Location Constraints</FormLabel>
+                    <FormControl>
+                      <Input placeholder="e.g., 'Downtown', 'Near a park'" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="activityPreferences"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Activity Preferences</FormLabel>
+                    <FormControl>
+                      <Textarea
+                        placeholder="e.g., 'Coffee', 'Casual hangout', 'Sports'"
+                        {...field}
                       />
-                    ))}
-                  </div>
-                  <FormMessage />
-                </FormItem>
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </CardContent>
+            <CardFooter className="flex flex-col items-stretch gap-4">
+              <SubmitButton />
+              {state.status === "error" && state.error && (
+                <Alert variant="destructive">
+                  <AlertTitle>Error</AlertTitle>
+                  <AlertDescription>{state.error}</AlertDescription>
+                </Alert>
               )}
-            />
-
-            <FormField
-              control={form.control}
-              name="timeConstraints"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Time Constraints</FormLabel>
-                  <FormControl>
-                    <Input placeholder="e.g., 'Any weekday evening', 'This weekend'" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="locationConstraints"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Location Constraints</FormLabel>
-                  <FormControl>
-                    <Input placeholder="e.g., 'Downtown', 'Near a park'" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="activityPreferences"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Activity Preferences</FormLabel>
-                  <FormControl>
-                    <Textarea
-                      placeholder="e.g., 'Coffee', 'Casual hangout', 'Sports'"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          </CardContent>
-          <CardFooter className="flex flex-col items-stretch gap-4">
-            <SubmitButton />
-            {state.status === "error" && state.error && (
-              <Alert variant="destructive">
-                <AlertTitle>Error</AlertTitle>
-                <AlertDescription>{state.error}</AlertDescription>
-              </Alert>
-            )}
-          </CardFooter>
-        </form>
+            </CardFooter>
+          </form>
+        </Form>
       </Card>
 
       {state.status === "loading" && (
@@ -232,3 +235,4 @@ function SubmitButton() {
         </Button>
     );
 }
+
