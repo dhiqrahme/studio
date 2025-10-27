@@ -17,7 +17,7 @@ export default function ProfilePage() {
             Keep your profile up to date to get the best matches.
           </p>
         </header>
-        <ProfileForm user={currentUser} interests={interests} />
+        <ProfileForm user={currentUser} interests={interestsForClient} />
       </div>
     </div>
   );
