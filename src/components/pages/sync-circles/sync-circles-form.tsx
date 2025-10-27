@@ -1,6 +1,6 @@
 "use client";
 
-import { useFormState } from "react-dom";
+import { useActionState } from "react";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -54,7 +54,7 @@ const initialState = {
 };
 
 export default function SyncCirclesForm({ friends }: { friends: User[] }) {
-  const [state, formAction] = useFormState(generateMeetupPlan, initialState);
+  const [state, formAction] = useActionState(generateMeetupPlan, initialState);
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
